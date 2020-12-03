@@ -19,7 +19,6 @@ public class OscillatorUI : MonoBehaviour
          audioSource =  oscillator.GetComponent<AudioSource>();
 
         toggle = gameObject.GetComponentInChildren<Toggle>();
-        //knobs.AddRange(FindObjectsOfType<Knob>());
         knobs = new List<Knob>(gameObject.GetComponentsInChildren<Knob>());
     }
     void Update()
@@ -37,6 +36,7 @@ public class OscillatorUI : MonoBehaviour
             if(k.type ==  KnobType.volume)
             {
                 audioSource.volume = k.value;
+
             }else if(k.type == KnobType.pitch)
             {
                 audioSource.pitch = k.value;

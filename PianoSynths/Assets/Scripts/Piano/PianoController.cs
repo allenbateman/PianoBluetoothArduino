@@ -29,13 +29,15 @@ public class PianoController : MonoBehaviour
         bluetooth = FindObjectOfType<Bluetooth>();
         keys = new GameObject[transform.childCount];
         envelope = FindObjectOfType<Envelope>();
-
+        //add the audio source for each key
        for (int i = 0; i< transform.childCount; i++)
        {
             keys[i] = transform.GetChild(i).gameObject;
             keys[i].AddComponent<AudioSource>();
        }
+       //init oscillator frequency
         oscillator1.frequency = rootFrequency;
+        oscillator1.GetComponent<AudioSource>().volume = 1;
         oscillator2.frequency = rootFrequency;
         oscillator3.frequency = rootFrequency;
         octave = 1;

@@ -10,7 +10,7 @@ public class KnobController : MonoBehaviour
     [SerializeField] Text valTxt;
 
     float value;
-
+    public float initValue =0;
     Vector3 mousePos;
     Vector3 knobPos;
 
@@ -19,6 +19,7 @@ public class KnobController : MonoBehaviour
     private void Start()
     {
         knob = GetComponent<Knob>();
+        value = initValue; 
     }
 
     public void OnHandleDrag()
